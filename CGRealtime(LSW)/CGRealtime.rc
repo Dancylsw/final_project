@@ -1,0 +1,676 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\CGRealtime.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CAL2X2 DIALOG DISCARDABLE  0, 0, 116, 73
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "(320,256)",IDC_BT_2X2_1,15,16,35,14
+    PUSHBUTTON      "(960,256)",IDC_BT_2X2_2,62,16,35,14
+    PUSHBUTTON      "(320,768)",IDC_BT_2X2_3,15,41,35,14
+    PUSHBUTTON      "(960,768)",IDC_BT_2X2_4,62,42,35,14
+END
+
+IDD_ACT DIALOG DISCARDABLE  0, 0, 187, 147
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "(213,171)",IDC_ACBT1,24,30,34,13
+    PUSHBUTTON      "(213,512)",IDC_ACBT4,24,65,34,13
+    PUSHBUTTON      "(213,853)",IDC_ACBT7,24,103,34,13
+    PUSHBUTTON      "(640,171)",IDC_ACBT2,76,30,34,13
+    PUSHBUTTON      "(640,512)",IDC_ACBT5,76,65,34,13
+    PUSHBUTTON      "(640,853)",IDC_ACBT8,76,103,34,13
+    PUSHBUTTON      "(1067,171)",IDC_ACBT3,129,30,34,13
+    PUSHBUTTON      "(1067,512)",IDC_ACBT6,129,65,34,13
+    PUSHBUTTON      "(1067,853)",IDC_ACBT9,129,103,34,13
+    PUSHBUTTON      "Done",IDC_ACTDONE,75,128,38,12
+END
+
+IDD_TSTPOG DIALOGEX 0, 0, 50, 50
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,19,18,
+                    11,12,WS_EX_DLGMODALFRAME | WS_EX_CLIENTEDGE
+END
+
+IDD_CAL3X3 DIALOG DISCARDABLE  0, 0, 180, 122
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "(213,171)",IDC_BT_3X3_1,21,18,34,13
+    PUSHBUTTON      "(213,512)",IDC_BT_3X3_4,21,53,34,13
+    PUSHBUTTON      "(213,853)",IDC_BT_3X3_7,21,91,34,13
+    PUSHBUTTON      "(640,171)",IDC_BT_3X3_2,73,18,34,13
+    PUSHBUTTON      "(640,512)",IDC_BT_3X3_5,73,53,34,13
+    PUSHBUTTON      "(640,853)",IDC_BT_3X3_8,73,91,34,13
+    PUSHBUTTON      "(1067,171)",IDC_BT_3X3_3,126,18,34,13
+    PUSHBUTTON      "(1067,512)",IDC_BT_3X3_6,126,53,34,13
+    PUSHBUTTON      "(1067,853)",IDC_BT_3X3_9,126,91,34,13
+END
+
+IDD_CAL4X4 DIALOG DISCARDABLE  0, 0, 184, 111
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "(160,128)",IDC_BT_4X4_1,11,15,28,11
+    PUSHBUTTON      "(480,128)",IDC_BT_4X4_2,53,15,28,11
+    PUSHBUTTON      "(800,128)",IDC_BT_4X4_3,96,15,28,11
+    PUSHBUTTON      "(1120,128)",IDC_BT_4X4_4,139,15,36,11
+    PUSHBUTTON      "(160,384)",IDC_BT_4X4_5,11,39,28,11
+    PUSHBUTTON      "(480,384)",IDC_BT_4X4_6,53,39,28,11
+    PUSHBUTTON      "(800,384)",IDC_BT_4X4_7,96,39,28,11
+    PUSHBUTTON      "(1120,384)",IDC_BT_4X4_8,139,39,36,11
+    PUSHBUTTON      "(160,640)",IDC_BT_4X4_9,11,63,28,11
+    PUSHBUTTON      "(480,640)",IDC_BT_4X4_10,53,63,28,11
+    PUSHBUTTON      "(800,640)",IDC_BT_4X4_11,96,63,28,11
+    PUSHBUTTON      "(1120,640)",IDC_BT_4X4_12,139,63,36,11
+    PUSHBUTTON      "(160,896)",IDC_BT_4X4_13,11,87,28,11
+    PUSHBUTTON      "(480,896)",IDC_BT_4X4_14,53,87,28,11
+    PUSHBUTTON      "(800,896)",IDC_BT_4X4_15,96,87,28,11
+    PUSHBUTTON      "(1120,896)",IDC_BT_4X4_16,139,87,36,11
+END
+
+IDD_CAL5X5 DIALOG DISCARDABLE  0, 0, 234, 131
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "(128,103)",IDC_BT_5X5_1,18,10,35,14
+    PUSHBUTTON      "(384,103)",IDC_BT_5X5_2,57,10,35,14
+    PUSHBUTTON      "(640,103)",IDC_BT_5X5_3,97,10,35,14
+    PUSHBUTTON      "(896,103)",IDC_BT_5X5_4,137,10,35,14
+    PUSHBUTTON      "(1152,103)",IDC_BT_5X5_5,178,10,39,14
+    PUSHBUTTON      "(128,308)",IDC_BT_5X5_6,18,32,35,14
+    PUSHBUTTON      "(384,308)",IDC_BT_5X5_7,57,32,35,14
+    PUSHBUTTON      "(640,308)",IDC_BT_5X5_8,97,32,35,14
+    PUSHBUTTON      "(896,308)",IDC_BT_5X5_9,137,32,35,14
+    PUSHBUTTON      "(1152,308)",IDC_BT_5X5_10,178,32,39,14
+    PUSHBUTTON      "(128,513)",IDC_BT_5X5_11,18,54,35,14
+    PUSHBUTTON      "(384,513)",IDC_BT_5X5_12,57,54,35,14
+    PUSHBUTTON      "(640,513)",IDC_BT_5X5_13,97,54,35,14
+    PUSHBUTTON      "(896,513)",IDC_BT_5X5_14,137,54,35,14
+    PUSHBUTTON      "(1152,513)",IDC_BT_5X5_15,178,54,39,14
+    PUSHBUTTON      "(128,718)",IDC_BT_5X5_16,18,77,35,14
+    PUSHBUTTON      "(384,718)",IDC_BT_5X5_17,57,77,35,14
+    PUSHBUTTON      "(640,718)",IDC_BT_5X5_18,97,77,35,14
+    PUSHBUTTON      "(896,718)",IDC_BT_5X5_19,137,77,35,14
+    PUSHBUTTON      "(1152,718)",IDC_BT_5X5_20,178,77,39,14
+    PUSHBUTTON      "(128,923)",IDC_BT_5X5_21,18,102,35,14
+    PUSHBUTTON      "(384,923)",IDC_BT_5X5_22,57,102,35,14
+    PUSHBUTTON      "(640,923)",IDC_BT_5X5_23,97,102,35,14
+    PUSHBUTTON      "(896,923)",IDC_BT_5X5_24,137,102,35,14
+    PUSHBUTTON      "(1152,923)",IDC_BT_5X5_25,178,102,39,14
+END
+
+IDD_CAL6X6 DIALOG DISCARDABLE  0, 0, 266, 130
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "(107,85)",IDC_BT_6X6_1,13,15,35,14
+    PUSHBUTTON      "(320,85)",IDC_BT_6X6_2,52,15,35,14
+    PUSHBUTTON      "(533,85)",IDC_BT_6X6_3,93,15,35,14
+    PUSHBUTTON      "(746,85)",IDC_BT_6X6_4,133,15,35,14
+    PUSHBUTTON      "(959,85)",IDC_BT_6X6_5,173,15,35,14
+    PUSHBUTTON      "(1172,85)",IDC_BT_6X6_6,213,15,40,14
+    PUSHBUTTON      "(107,256)",IDC_BT_6X6_7,13,31,35,14
+    PUSHBUTTON      "(320,256)",IDC_BT_6X6_8,52,31,35,14
+    PUSHBUTTON      "(533,256)",IDC_BT_6X6_9,93,31,35,14
+    PUSHBUTTON      "(746,256)",IDC_BT_6X6_10,133,31,35,14
+    PUSHBUTTON      "(959,256)",IDC_BT_6X6_11,173,31,35,14
+    PUSHBUTTON      "(1172,256)",IDC_BT_6X6_12,213,31,39,14
+    PUSHBUTTON      "(107,427)",IDC_BT_6X6_13,13,48,35,14
+    PUSHBUTTON      "(320,427)",IDC_BT_6X6_14,52,48,35,14
+    PUSHBUTTON      "(533,427)",IDC_BT_6X6_15,93,48,35,14
+    PUSHBUTTON      "(746,427)",IDC_BT_6X6_16,133,48,35,14
+    PUSHBUTTON      "(959,427)",IDC_BT_6X6_17,173,48,35,14
+    PUSHBUTTON      "(1172,427)",IDC_BT_6X6_18,213,48,39,14
+    PUSHBUTTON      "(107,598)",IDC_BT_6X6_19,13,65,35,14
+    PUSHBUTTON      "(320,598)",IDC_BT_6X6_20,52,65,35,14
+    PUSHBUTTON      "(533,598)",IDC_BT_6X6_21,93,65,35,14
+    PUSHBUTTON      "(746,598)",IDC_BT_6X6_22,133,65,35,14
+    PUSHBUTTON      "(959,598)",IDC_BT_6X6_23,173,65,35,14
+    PUSHBUTTON      "(1172,598)",IDC_BT_6X6_24,213,65,39,14
+    PUSHBUTTON      "(107,769)",IDC_BT_6X6_25,13,83,35,14
+    PUSHBUTTON      "(320,769)",IDC_BT_6X6_26,52,83,35,14
+    PUSHBUTTON      "(533,769)",IDC_BT_6X6_27,93,83,35,14
+    PUSHBUTTON      "(746,769)",IDC_BT_6X6_28,133,83,35,14
+    PUSHBUTTON      "(959,769)",IDC_BT_6X6_29,173,83,35,14
+    PUSHBUTTON      "(1172,769)",IDC_BT_6X6_30,213,83,39,14
+    PUSHBUTTON      "(107,940)",IDC_BT_6X6_31,13,101,35,14
+    PUSHBUTTON      "(320,940)",IDC_BT_6X6_32,52,101,35,14
+    PUSHBUTTON      "(533,940)",IDC_BT_6X6_33,93,101,35,14
+    PUSHBUTTON      "(746,940)",IDC_BT_6X6_34,133,101,35,14
+    PUSHBUTTON      "(959,940)",IDC_BT_6X6_35,173,101,35,14
+    PUSHBUTTON      "(1172,940)",IDC_BT_6X6_36,213,101,39,14
+END
+
+IDD_BTTEST DIALOG DISCARDABLE  0, 0, 515, 392
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "ButtonTest"
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT1,96,7,324,41,ES_AUTOHSCROLL
+    PUSHBUTTON      "<--",IDC_BTST_BACKSPACE,141,59,100,80
+    PUSHBUTTON      "ABC",IDC_BTST_ABC,274,59,100,80
+    PUSHBUTTON      "DEF",IDC_BTST_DEF,408,57,100,80
+    PUSHBUTTON      "GHI",IDC_BTST_GHI,140,167,100,80
+    PUSHBUTTON      "JKL",IDC_BTST_JKL,275,165,100,80
+    PUSHBUTTON      "MNO",IDC_BTST_MNO,408,163,100,80
+    PUSHBUTTON      "PQRS",IDC_BTST_PQRS,141,275,100,80
+    PUSHBUTTON      "TUV",IDC_BTST_TUV,277,275,100,80
+    PUSHBUTTON      "WXYZ",IDC_BTST_WXYZ,408,275,100,80
+    PUSHBUTTON      "SPACE",IDC_BTST_SPACE,7,59,100,190
+    PUSHBUTTON      "Clear",IDC_BTST_CLEAR,7,274,100,80
+    PUSHBUTTON      "A",IDC_BTTEST_A,57,59,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "B",IDC_BTTEST_B,314,58,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "C",IDC_BTTEST_C,66,236,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "BACK",IDC_BTTEST_BACK,320,239,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "D",IDC_BTTEST_D,57,58,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "E",IDC_BTTEST_E,315,57,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "F",IDC_BTTEST_F,67,236,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "G",IDC_BTTEST_G,58,60,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "H",IDC_BTTEST_H,313,60,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "I",IDC_BTTEST_I,67,236,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "J",IDC_BTTEST_J,65,61,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "K",IDC_BTTEST_K,315,59,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "L",IDC_BTTEST_L,66,236,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "M",IDC_BTTEST_M,65,60,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "N",IDC_BTTEST_N,315,58,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "O",IDC_BTTEST_O,67,235,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "P",IDC_BTST_P,155,98,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "Q",IDC_BTST_Q,330,99,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "R",IDC_BTST_R,157,247,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "S",IDC_BTST_S,331,245,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "T",IDC_BTTEST_T,66,59,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "U",IDC_BTTEST_U,315,57,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "V",IDC_BTTEST_V,66,235,140,120,NOT WS_VISIBLE
+    PUSHBUTTON      "W",IDC_BTST_W,155,98,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "X",IDC_BTST_X,330,99,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "Y",IDC_BTST_Y,157,248,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "Z",IDC_BTST_Z,331,245,120,100,NOT WS_VISIBLE
+    PUSHBUTTON      "BACK",IDC_BTST_INBACK,7,114,100,190,NOT WS_VISIBLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_CAL2X2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 109
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_ACT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 140
+    END
+
+    IDD_TSTPOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 43
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 43
+    END
+
+    IDD_CAL3X3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 173
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 115
+    END
+
+    IDD_CAL4X4, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 177
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 104
+    END
+
+    IDD_CAL5X5, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 227
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 124
+    END
+
+    IDD_CAL6X6, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 123
+    END
+
+    IDD_BTTEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 508
+        VERTGUIDE, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 385
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "EyeGazeTracking"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "HK REGT Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\CGRealtime.ico"
+IDR_CGSNAPTYPE          ICON    DISCARDABLE     "res\\CGRealtimeDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  15, 15
+BEGIN
+    BUTTON      ID_HKSTOP
+    SEPARATOR
+    BUTTON      ID_BTCALIB
+    SEPARATOR
+    BUTTON      ID_CALIB3X3
+    SEPARATOR
+    BUTTON      ID_BTCALIB4X4
+    SEPARATOR
+    BUTTON      ID_BTCALIB5X5
+    SEPARATOR
+    BUTTON      ID_BTCALIB6X6
+    SEPARATOR
+    BUTTON      ID_BTMAPPING
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "CardCtrl"
+    BEGIN
+        MENUITEM "Open",                        ID_SNAPEX_OPEN
+        MENUITEM "Start",                       ID_SNAPEX_START
+        MENUITEM "Stop",                        ID_SNAPEX_STOP
+        MENUITEM "Close",                       ID_SNAPEX_CLOSE
+        MENUITEM "Negative",                    ID_NEGATIVE
+    END
+    MENUITEM "AccuTest",                    IDM_ACCUTEST
+    POPUP "GridTest"
+    BEGIN
+        MENUITEM "2X2",                         IDM_GRIDTEST_2X2
+        MENUITEM "3X3",                         IDM_GRIDTEST_3X3
+        MENUITEM "4X4",                         IDM_GRIDTEST_4X4
+        MENUITEM "5X5",                         IDM_GRIDTEST_5X5
+        MENUITEM "6X6",                         IDM_GRIDTEST_6X6
+    END
+    MENUITEM "ButtonTest",                  IDM_BTEST
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "CGRealtime MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "CGRealtime\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "CGRealtime.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "CGRealtime Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "CGRealtime\n\nCGSnap\n\n\nCGRealtime.Document\nCGSnap Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "CGRealtime"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\CGRealtime.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
