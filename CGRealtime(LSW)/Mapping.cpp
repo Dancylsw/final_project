@@ -15,6 +15,7 @@ using namespace std;
 Mapping::Mapping()
 {
   bestAlph = 2.0000;
+  bestVector = Point(0, 0);
 }
 
 Mapping::~Mapping()
@@ -159,7 +160,7 @@ void Mapping::calGazePoint(Point point[6], float alph, Point vect){
 				double Xgaze=width*CRx/(1+CRx);
 				double Ygaze=height*CRy/(1+CRy);
 		
-				Xgaze = Xgaze + vect.getX();
+				Xgaze = Xgaze + vect.getX();			//计算注视点后加上位移矢量
 				Ygaze = Ygaze + vect.getY();
 
 				gazePoint.setX(Xgaze);
@@ -178,9 +179,10 @@ void Mapping::calGazePoint(Point point[6], float alph, Point vect){
 void Mapping::calBestAlph(Point point[6], Point caliPoint)
 {
 		Point	nx[5];
-		float	tempAlph = 2.0;
+		float	tempAlph = 2.5;			//alpha在区间[0.5,2.5]里边取最优值
 		double	minDistance = 65535;
 		Point	tempVector(0, 0);
+
 		while(1)
 		{
 			for(int i=0;i<4;i++)
@@ -282,7 +284,8 @@ void Mapping::calBestAlph(Point point[6], Point caliPoint)
 				double Ygaze=height*CRy/(1+CRy);
 				double currentDistance = sqrt((Xgaze - caliPoint.getX())*(Xgaze - caliPoint.getX())+(Ygaze - caliPoint.getY())*(Ygaze - caliPoint.getY()));
                 
-				tempVector.setX(caliPoint.getX() - Xgaze);	//将当前屏幕注视点与计算点之差保存为矢量，存放在一个Point中
+				//将当前屏幕注视点与计算点之差保存为矢量，存放在一个Point中
+				tempVector.setX(caliPoint.getX() - Xgaze);	
 				tempVector.setY(caliPoint.getY() - Ygaze);
 
                 if (currentDistance < minDistance)
@@ -294,23 +297,30 @@ void Mapping::calBestAlph(Point point[6], Point caliPoint)
 				    gazePoint.setY(Ygaze);	
                 }
 
-// 				if (currentDistance< 20) 
-// 				{
-// 					bestAlph = tempAlph;				//获取当前alpha值
-// 					CPublic::saveFlag = true;
-// 					break;
-// 				}
-
 				tempAlph = tempAlph - 0.001;
-				if (tempAlph<=0.5)
+				if (tempAlph <= 1.0)
 				{
-					CPublic::saveFlag = true;			//判断alpha值，vector矢量是否要保存到文件中
+					if (bestVector.getX() > 100 || bestVector.getX() < -100 || bestVector.getY() < -100 || bestVector.getY() > 100)
+					{
+						CPublic::saveFlag = false;
+					}
+					else
+					{
+						CPublic::saveFlag = true;			//判断alpha值，vector矢量是否要保存到文件中
+					}
 					break;
 				}
 			}
 			else
 			{
-				CPublic::saveFlag = true;
+				if (bestVector.getX() > 100 || bestVector.getX() < -100 || bestVector.getY() < -100 || bestVector.getY() > 100)
+				{
+					CPublic::saveFlag = false;
+				}
+				else
+				{
+					CPublic::saveFlag = true;
+				}
 				break;
 			}
 		}	

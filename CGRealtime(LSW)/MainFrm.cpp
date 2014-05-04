@@ -598,9 +598,9 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 		{
 /*************************************图像预处理，提取人眼特征等初步工作***************************************************************/
 
-			preprocess.setThreshold(35);//--------------------------------21
-			preprocess.setScopeHeight(566);//标定图像的左半区域
-			preprocess.setScopeWidth(384);
+			preprocess.setThreshold(35);		//--------------------------------21
+			preprocess.setScopeHeight(566);
+			preprocess.setScopeWidth(384);		//标定图像的左半区域
 			preprocess.setWidth(768);
 			preprocess.search(m_pImageBuffer,10,0,true);	//对区域进行搜索，粗定位瞳孔中心pupilCenter
 															//因为图像的底部有黑色条纹，所以不能从(0,0)开始		
@@ -762,7 +762,9 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 								mapping.setWidth(width);
 
 								//进行映射
-								mapping.calGazePoint(pointbobo,m_bestAlph,m_bestVector);
+								mapping.calGazePoint(pointbobo,m_bestAlph,m_bestVector);		//粗略获取当前注视点坐标
+
+								//判断当前注视点所在屏幕子区域
 								if(mapping.getGazePoint().getX()!=0&&mapping.getGazePoint().getY()!=0)
 								{							
 									float minDistance = 65535.0;
@@ -776,14 +778,14 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
                                             minDistance = curDistance;
 											aIndex = i;
 										}
-
 									}
 									
-									SetCursorPos(mapping.getGazePoint().getX(), mapping.getGazePoint().getY());
-
-					
 									m_bestAlph = CPublic::g_curBestAlpha[aIndex];
 									m_bestVector = CPublic::g_curBestVector[aIndex];
+									
+									//在更新最佳alpha以及最佳位移矢量之后，重新计算注视点坐标
+									mapping.calGazePoint(pointbobo,m_bestAlph,m_bestVector);
+									SetCursorPos(mapping.getGazePoint().getX(), mapping.getGazePoint().getY());
 
 					/*************
 									//获取鼠标当前位置
@@ -860,7 +862,7 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 					*************/
 									fprintf(pogRecordFile,"%f	%f\n",mapping.getGazePoint().getX(),mapping.getGazePoint().getY());
 									clickTimer++;
-									if (50 == clickTimer)		
+									if (10 == clickTimer)		//注视多久按键		
 									{
 										mouse_event(MOUSEEVENTF_LEFTDOWN,0,0,0,0);
                                         mouse_event(MOUSEEVENTF_LEFTUP,0,0,0,0); 
@@ -874,10 +876,11 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 								//进行赋值操作
 								mapping.setHeight(height);
 								mapping.setWidth(width);
-								//进行映射
+								//进行映射，粗略计算当前注视点坐标
 								mapping.calGazePoint(pointbobo, m_bestAlph,m_bestVector);
+								//判断当前注视点坐在屏幕子区域
 								if(mapping.getGazePoint().getX()!=0&&mapping.getGazePoint().getY()!=0)
-								{//	cout<<"PointOfGaze: ("<<mapping.getGazePoint().getY()<<","<<mapping.getGazePoint().getX()<<")"<<endl;							
+								{							
 									float minDistance = 65535.0;
 									float curDistance = 65535.0;
 									int aIndex=0;
@@ -893,7 +896,9 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 									}
 									m_bestAlph = CPublic::g_curBestAlpha[aIndex];
 									m_bestVector = CPublic::g_curBestVector[aIndex];
-
+									
+									//在更新最佳alpha以及最佳位移矢量之后，重新计算注视点坐标
+									mapping.calGazePoint(pointbobo,m_bestAlph,m_bestVector);
 									SetCursorPos(mapping.getGazePoint().getX(),mapping.getGazePoint().getY());
 									float errorDistance = 0;
 									errorDistance = sqrt((CPublic::g_pCurTestPoint->getX()-mapping.getGazePoint().getX())*(CPublic::g_pCurTestPoint->getX()-mapping.getGazePoint().getX())+(CPublic::g_pCurTestPoint->getY()-mapping.getGazePoint().getY())*(CPublic::g_pCurTestPoint->getY()-mapping.getGazePoint().getY()));
@@ -909,8 +914,9 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 								mapping.setHeight(height);
 								mapping.setWidth(width);
 
-								//进行映射
+								//进行映射，粗略计算人眼注视点的坐标
 								mapping.calGazePoint(pointbobo,m_bestAlph,m_bestVector);
+								//判断注视点所在屏幕子区域
 								if(mapping.getGazePoint().getX()!=0&&mapping.getGazePoint().getY()!=0)
 								{							
 									float minDistance = 65535.0;
