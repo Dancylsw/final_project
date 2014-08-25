@@ -79,6 +79,8 @@ public:
 	static bool NumFlag;					//标记数字键盘是否打开
 	static bool AlpFlag;					//标记全键盘是否打开
 
+	static bool FaceDetected;				//人脸识别的开关
+
 
 
 };

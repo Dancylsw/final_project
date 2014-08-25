@@ -21,7 +21,10 @@
 #include "highgui.h"
 #include "cxcore.h"
 
+#include <string>
 #include <iostream>
+#include <stdlib.h>
+#include <string.h>
 using namespace std;
 
 
@@ -66,9 +69,10 @@ BEGIN_MESSAGE_MAP(CMainFrame, CFrameWnd)
 	ON_COMMAND(IDM_GRIDTEST_4X4, OnGridtest4x4)
 	ON_COMMAND(IDM_GRIDTEST_5X5, OnGridtest5x5)
 	ON_COMMAND(IDM_GRIDTEST_6X6, OnGridtest6x6)
-	ON_WM_ACTIVATE()
 	ON_COMMAND(IDM_KEYBOARD, OnKeyboard)
 	ON_COMMAND(ID_LSW, MyParameter)
+	ON_WM_ACTIVATE()
+	ON_COMMAND(ID_FACEDETECT, OnFacedetect)
 	//}}AFX_MSG_MAP
 END_MESSAGE_MAP()
 
@@ -82,11 +86,6 @@ static UINT indicators[] =
 
 /////////////////////////////////////////////////////////////////////////////
 // CMainFrame construction/destruction
-
-
-
-
-
 CMainFrame::CMainFrame()
 {
 	// TODO: add member initialization code here
@@ -621,8 +620,112 @@ void drawrect(BYTE* data, int x, int y)
 		*(data+x*768*3+i*3+1)=0;
 		*(data+x*768*3+i*3+2)=255;
 	}
-
 }
+
+const char* cascade_name ="haarcascade_frontalface_alt.xml";//分类器的名称
+
+/**
+ * @author		lsw_sky@outlook.com
+ * @date		2014.08.22
+ * @brief		对传入的BYTE格式的图像进行人脸检测并标示出来
+ * @param[in]	BYTE* m_pData	待检测图像
+ * @param[in]	int width		待检测图像的宽
+ * @param[in]	int height		待检测图像的高
+ * @return		void
+ **/
+void CMainFrame::detect_and_draw(BYTE* m_pData, int width, int height)				
+{
+	//将m_pData进行上下翻转
+	BYTE* tempData;
+	tempData = (BYTE*) malloc (width * height * 3 * sizeof(BYTE));
+	memset(tempData, 0, width*height*3*sizeof(BYTE));
+
+	int i, j;
+	for (i = 0; i < height; i ++)
+	{
+		for (j = 0; j < width; j ++)
+		{
+			*(tempData + i*width*3 + j*3) = *(m_pData + (height-1-i)*width*3 + 3*j);
+			*(tempData + i*width*3 + j*3 + 1) = *(m_pData + (height-1-i)*width*3 + 3*j + 1);
+			*(tempData + i*width*3 + j*3 + 2) = *(m_pData + (height-1-i)*width*3 + 3*j + 2);
+		}
+	}
+
+
+	//加载(级联分类器)训练库
+	cascade = (CvHaarClassifierCascade*)cvLoad(cascade_name, 0, 0, 0);
+
+	//加载成功进行人脸识别并标示，加载不成功显示出错信息
+	if (cascade)
+	{
+		//将BYTE图像格式转换成IplImage格式
+		IplImage* img = cvCreateImageHeader( cvSize(width, height), IPL_DEPTH_8U, 3);
+		cvSetData(img, tempData, width*3);
+
+		//人脸识别，并用矩形框标示
+		storage = cvCreateMemStorage(0);
+		
+		IplImage* tempImg = cvCreateImage(cvSize(img->width, img->height), 8, 1);
+
+		cvCvtColor(img, tempImg, CV_BGR2GRAY);
+		cvEqualizeHist(tempImg, tempImg);
+		cvClearMemStorage(storage);
+
+		CvSeq* faces = cvHaarDetectObjects( tempImg, cascade, storage, 1.1, 2, 0, cvSize(200, 200));	//设置可检测到的最小人脸大小为(200,200)
+		static int face_counter = 0;
+
+		for (i = 0; i < (faces ? faces->total : 0); i++)
+		{
+			CvRect* rect = (CvRect*)cvGetSeqElem(faces, i);
+			
+			char pathName[50] = ".\\faces\\";			//生成文件保存路径
+			char faceCounter[5];
+			itoa(face_counter, faceCounter, 10);
+			strcat(pathName, faceCounter);
+			strcat(pathName, ".jpg");
+			face_counter++;
+
+			IplImage* face = cvCreateImage(cvSize(150, 150), 8, 3);
+					
+			cvSetImageROI(img, *rect);					//设置ROI(region of interest)
+			cvResize(img, face);						//将ROI区域保存到face图像中
+			cvSaveImage(pathName, face);				//保存到文件
+			cvResetImageROI(img);						//释放ROI
+
+			cvReleaseImage(&face);
+
+			CvPoint pt1;
+			CvPoint pt2;
+			pt1.x = rect->x;
+			pt1.y = rect->y;
+			pt2.x = rect->x + rect->width;
+			pt2.y = rect->y + rect->height;
+			cvRectangle( img, pt1, pt2, CV_RGB(255, 0, 0), 2);	
+		}
+		cvReleaseImage( &tempImg);
+
+		//检测完图像将IplImage格式转回BYTE
+		for (i = 0; i < width*height*3; i++)
+			tempData[i] = (img->imageDataOrigin)[i];
+
+		//将之前的翻转在翻转回来
+		for (i = 0; i < height; i ++)
+		{
+			for (j = 0; j < width; j ++)
+			{
+				*(m_pData + i*width*3 + j*3) = *(tempData + (height-1-i)*width*3 + 3*j);
+				*(m_pData + i*width*3 + j*3 + 1) = *(tempData + (height-1-i)*width*3 + 3*j + 1);
+				*(m_pData + i*width*3 + j*3 + 2) = *(tempData + (height-1-i)*width*3 + 3*j + 2);
+			}
+		}	
+	}
+
+	else
+		AfxMessageBox("无法加载分类器，请确认后重试！");
+	cvReleaseHaarClassifierCascade( &cascade);
+}
+
+
 
 
 /*
@@ -685,7 +788,10 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 ///////////////////////////////////////////////////////////////////////////////////////////////////		
 		int i;
 		
-		if(CPublic::stateTag==0)
+		if (CPublic::FaceDetected == TRUE)
+			detect_and_draw(m_pImageBuffer, 768, 576);
+
+    	if(CPublic::stateTag==0)
 		{
 		
 		}
@@ -757,8 +863,7 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 								
 								*( picture1+ (i-ii+40)*80*3 + (j-jj+40)*3)=*(m_pImageBuffer+i*768*3+j*3);
 								*( picture1+ (i-ii+40)*80*3 + (j-jj+40)*3+1)=*(m_pImageBuffer+i*768*3+j*3);
-								*( picture1+ (i-ii+40)*80*3 + (j-jj+40)*3+2)=*(m_pImageBuffer+i*768*3+j*3);
-								
+								*( picture1+ (i-ii+40)*80*3 + (j-jj+40)*3+2)=*(m_pImageBuffer+i*768*3+j*3);	
 							}
 						}
 
@@ -772,6 +877,7 @@ LRESULT CMainFrame::OnSnapExChange(WPARAM wParam, LPARAM lParam)
 
 						//中值滤波
 						cvSmooth(frame,frame2,CV_MEDIAN,9,9,0,0);
+
 
 						//将滤波后的图像放回到原始图像中
 						for(i=point.getX()-40;i<point.getX()+40;i++)
@@ -1453,4 +1559,13 @@ void CMainFrame::OnKeyboard()
 	CPassWordDlg *pPWDlg = new CPassWordDlg;
 	pPWDlg->Create(IDD_PassWord, this);
 	pPWDlg->ShowWindow(SW_SHOW);
+}
+
+void CMainFrame::OnFacedetect() 
+{
+	// TODO: Add your command handler code here
+	if (CPublic::FaceDetected == FALSE)
+		CPublic::FaceDetected = TRUE;
+	else
+		CPublic::FaceDetected = FALSE;
 }

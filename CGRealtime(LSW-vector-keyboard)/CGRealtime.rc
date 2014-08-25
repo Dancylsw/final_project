@@ -458,6 +458,7 @@ BEGIN
     END
     MENUITEM "ButtonTest",                  IDM_BTEST
     MENUITEM "KeyBoard",                    IDM_KEYBOARD
+    MENUITEM "FaceDetect",                  ID_FACEDETECT
 END
 
 

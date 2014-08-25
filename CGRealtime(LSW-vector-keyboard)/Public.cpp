@@ -373,5 +373,5 @@ CRect CPublic::rectAlp[30] = {
 
 bool CPublic::NumFlag = FALSE;		//初始状态都设置为关闭
 bool CPublic::AlpFlag = FALSE;		//此标志并不跟键盘真实打开相关联，而是与获取键盘中按键的位置同步
-
+bool CPublic::FaceDetected = FALSE;	//初始设置为否，点击按钮factdetection开启，再次点击关闭
 

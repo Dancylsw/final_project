@@ -17,6 +17,9 @@
 #include "Mapping.h"
 #include "Point.h"	// Added by ClassView
 
+#include "cv.h"
+#include "highgui.h"
+
 #define WM_SNAP_EX_CHANGE		(WM_USER + 100)
 
 
@@ -34,6 +37,10 @@ public://HK
 	Mapping mapping;
 	Preprocess preprocess;
 
+	//for facedetection
+	CvHaarClassifierCascade *cascade;			//特征器分类
+	CvMemStorage *storage;						//内存存储块
+	void detect_and_draw( BYTE* m_PData, int width, int height);		//检测和标识函数
 
 // Operations
 public:
@@ -89,6 +96,7 @@ protected:
 	afx_msg void OnGridtest6x6();
 	afx_msg void OnKeyboard();
 	afx_msg void MyParameter();
+	afx_msg void OnFacedetect();
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()
 

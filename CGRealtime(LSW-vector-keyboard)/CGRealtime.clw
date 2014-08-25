@@ -18,26 +18,26 @@ ResourceCount=14
 Resource1=IDD_ABOUTBOX
 Resource2=IDR_MAINFRAME
 Class5=CButtonTestDlg
-Resource3=IDD_PassWord
-Resource4=IDD_CAL6X6
+Resource3=IDD_ABOUTBOX (English (U.S.))
+Resource4=IDD_CAL4X4
 Class6=CCaliDlg2X2
-Resource5=IDD_ACT
+Resource5=IDD_PassWord
 Class7=CActDlg
-Resource6=IDD_CAL3X3
+Resource6=IDD_ACT
 Class8=CTSTPOG
-Resource7=IDD_KeyBoard
+Resource7=IDD_BTTEST
 Class9=CCaliDlg3X3
-Resource8=IDD_CAL5X5
+Resource8=IDD_CAL3X3
 Class10=CCaliDlg4X4
-Resource9=IDD_TSTPOG
+Resource9=IDD_CAL2X2
 Class11=CCaliDlg5X5
-Resource10=IDD_ABOUTBOX (English (U.S.))
+Resource10=IDD_CAL6X6
 Class12=CCaliDlg6X6
-Resource11=IDD_CAL2X2
+Resource11=IDD_KeyBoard
 Class13=CCALPOG
-Resource12=IDD_CAL4X4
+Resource12=IDD_TSTPOG
 Class14=CKeyBoardDlg
-Resource13=IDD_BTTEST
+Resource13=IDD_CAL5X5
 Class15=CPassWordDlg
 Resource14=IDR_MAINFRAME (English (U.S.))
 
@@ -67,7 +67,7 @@ ImplementationFile=MainFrm.cpp
 Filter=T
 BaseClass=CFrameWnd
 VirtualFilter=fWC
-LastObject=IDM_KEYBOARD
+LastObject=ID_FACEDETECT
 
 
 
@@ -138,7 +138,8 @@ Command10=IDM_GRIDTEST_5X5
 Command11=IDM_GRIDTEST_6X6
 Command12=IDM_BTEST
 Command13=IDM_KEYBOARD
-CommandCount=13
+Command14=ID_FACEDETECT
+CommandCount=14
 
 [TB:IDR_MAINFRAME (English (U.S.))]
 Type=1
